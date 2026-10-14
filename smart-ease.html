@@ -6,6 +6,86 @@
     <title>Smart-ease</title>
   </head>
   <body>
-    <script></script>
+    <script>
+      /*<exercise 1>*/
+      //Flight booking fullname function//
+
+      function getFullName(firstName, surname, useFormalName) {
+        if (useFormalName === true) {
+          return "lord" + " " + firstName + " " + surname;
+        } else {
+          return firstName + " " + surname;
+        }
+      }
+      const firstLastName = getFullName("Benjamin", "Hughes", false);
+      const formalName = getFullName("Benjamin", "Hughes", true);
+
+      console.log = firstLastName;
+      console.log = formalName;
+
+      /*<exercise 2>*/
+      function getEventWeekday(daysFromToday) {
+        const weekdays = [
+          "sunday",
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday",
+        ];
+        const today = new Date().getDay();
+        const eventDayIndex = (today + daysFromToday) % 7;
+        return weekdays[eventDayIndex];
+      }
+      console.log(getEventWeekday(9));
+      console.log(getEventWeekday(2));
+
+      /*<exercise 3>*/
+      /*Weather wear*/
+      function weatherTemperature(temperature) {
+        if (temperature < 0) {
+          return "It's cold, wear a Jacket and gloves.";
+        } else if (temperature < 17) {
+          return "It's sunny, wear T.shirt, sunglasses.";
+        } else temperature < 25;
+        {
+          return "It's warm, wear a t-shirt and slipper";
+        }
+      }
+
+      const clothesToWear = weatherTemperature(18);
+      console.log(clothesToWear);
+
+      /*exercise4>*/
+      /*Student manager*/
+      const class07Students = [];
+      function addStudentToClass(studentName) {
+        if (studentName === " ") {
+          console.log("You cannot add an empty string to a class");
+        } else if (class07Students.includes(studentName)) {
+          console.log(`Student ${studentName} is already in the class`);
+        } else if (class07Students >= 6 && studentName !== "Queen") {
+          console.log("Cannot add more students to class 07");
+        }
+        class07Students.push(studentName);
+      }
+
+      function getNumberOfStudents() {
+        return class07Students.length;
+      }
+      addStudentToClass("Ali");
+      addStudentToClass("Ram");
+      addStudentToClass("emily");
+      addStudentToClass("Jak");
+      addStudentToClass("mari");
+      addStudentToClass("Ros");
+      console.log(getNumberOfStudents());
+      addStudentToClass("Ali");
+      addStudentToClass("ROS");
+      addStudentToClass("Queen");
+      console.log(getNumberOfStudents());
+      console.log(class07Students);
+    </script>
   </body>
 </html>
